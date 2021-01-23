@@ -9,7 +9,7 @@ export default abstract class BaseGame implements IBaseGame {
     tail: Piece;
 
     /** @default null */
-    food: Piece | null = null;
+    food: Piece | null = null; // Ha gyors lenne, akkor Piece = null -al próbáld meg.
 
     /** @default null */
     goldenApple: Piece | null = null;
