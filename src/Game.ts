@@ -73,6 +73,24 @@ export default class Game extends BaseGame {
     return pick < chance ? true : false;
   }
 
+  /**
+       * @returns {void}
+       * A metódus feladatai:
+       * 1. keresd meg a DOM -ban az összes .vertical-grid és .horizontal-grid
+       * elemet - OK
+       * 2. mentsd el őket egy grids nevű változóba - OK
+       * 3. járd be a tömböt, és minden elemére hívd meg a Utils.removeNode
+       * metódust, hogy eltávolítsd őket az oldalról
+       * 4. a this.gridVisible értékét állítsd false -ra - OK
+       */
+
+  removeGrid(): void {
+    const grids = document.querySelectorAll('.vertical-grid, .horizontal-grid');
+
+    this.gridVisible = false;
+  }
+
+
   // Remove the old chain, put HEAD in the starting position
   resetHead(): Piece {
     if (this.head.next) {
