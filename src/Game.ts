@@ -14,7 +14,7 @@ import BaseGame from './BaseGame';
  * interfész alpján. - OK
  * 2. A BaseGame osztályban található leírások alapján pótold ebben a Game 
  * osztályban a hiányzó metódusokat. Úgy találod meg őket, hogy abstract 
- * metódusként vannak definiálva.
+ * metódusként vannak definiálva. - OK?
  */
 export default class Game extends BaseGame {
 
@@ -79,7 +79,7 @@ export default class Game extends BaseGame {
        * 1. keresd meg a DOM -ban az összes .vertical-grid és .horizontal-grid
        * elemet - OK
        * 2. mentsd el őket egy grids nevű változóba - OK
-       * 3. járd be a tömböt, és minden elemére hívd meg a Utils.removeNode
+       * 3. járd be a tömböt, és minden elemére hívd meg a Utils.removeNode - OK?
        * metódust, hogy eltávolítsd őket az oldalról
        * 4. a this.gridVisible értékét állítsd false -ra - OK
        */
