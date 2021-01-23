@@ -40,7 +40,7 @@ export default abstract class BaseGame implements IBaseGame {
 
     protected noClip: boolean = false;
 
-    /**
+    /** OK
      * @returns {number}
      * Egy random számot szorozz meg a this.level.length -el, 
      * majd kerekítsd lefelé, ez lesz az index.
@@ -48,7 +48,7 @@ export default abstract class BaseGame implements IBaseGame {
      */
     abstract getRandomLevel(): Level;
 
-    /**
+    /**  OK
      * @returns {boolean}
      * 1. hozz létre egy chance neű változót 5 értékkel
      * 2. hozz létre egy pick nevű változót, értéke random szám szorozva 100 -al

@@ -64,7 +64,13 @@ export default class Game extends BaseGame {
   }
 
   getRandomLevel(): Level {
-    return this.levels[Math.floor(Math.random * this.levels.length)];
+    return this.levels[Math.floor(Math.random() * this.levels.length)];
+  }
+
+  mayIHaveGoldenApple(): boolean {
+    const chance = 5;
+    const pick = Math.random() * 100;
+    return pick < chance ? true : false;
   }
 
   // Remove the old chain, put HEAD in the starting position
