@@ -91,7 +91,7 @@ export default class Level {
      * a rows és cols paraméterekkel
      */
 
-    
+    let level: LevelMap = this.generatorFunction(rows, cols);
 
     level.forEach(line => {
       const [x0, y0]: coord = line[0];
