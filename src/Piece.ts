@@ -54,7 +54,14 @@ interface IPiece {
  */
 export default class Piece implements IPiece {
   
-  
+  next: Piece | null;
+  prev: Piece | null;
+  x: number;
+  y: number;
+  el: HTMLDivElement;
+  direction: string;
+  type: string;
+  garden: HTMLDivElement;
   
   constructor({
     x,
