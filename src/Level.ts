@@ -83,7 +83,7 @@ export default class Level {
      * lefelé kerekítve 
      */
 
-    
+    let rows: number = Math.floor(this.garden.clientWidth / SIZE);
     
     /** 
      * FELADAT!
