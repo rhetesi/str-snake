@@ -199,6 +199,7 @@ export default class Game extends BaseGame {
         this.growth += 1; // Snake got bigger
       }
 
+      /* Almák értékeinke beállítása: normál = 1 pont, zöld (Golden) = -2 pont */
       this.updateScore(type === 'food' ? 1 : -2); // Calculate the new score
       this.showScore(); // Update the score
     }
@@ -435,6 +436,7 @@ export default class Game extends BaseGame {
             }
           }
 
+          /* Jobbra fordulás - notRight metódus - figyelése, kezelése */
           if (e.keyCode in keys && this.notBackwards(e.keyCode) && this.notRight(e.keyCode)) {
             if (Directions.peek() !== e.keyCode) {
               Directions.set(e.keyCode);
