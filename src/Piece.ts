@@ -21,22 +21,26 @@ interface IPiece {
   type: string;
   garden: HTMLDivElement;
 
-  /**
+    /**
    * Beállítja a típust.
    * @param type {string} - a beállítandó típus
    * 1. A this.type tulajdonságot beállítja a kapott type értékre.
    * 2. Meghívja a this.applyClass metódust a változtatások érvényesítéséhez.
    */
-  setType(type: string): void;
 
-  /**
+       
+    setType(type: string): void; 
+    
+   /**
    * Osztályokat állít be a this.el HTML elemre.
    * 1. A this.el.className -et üres string -re állítja.
    * 2. A this.el.classList.add metódussal hozzáad három új osztályt:
    * 'cell', this.type, this.direction
    */
-  applyClass(): void;
 
+    applyClass(): void;
+  
+  
   /**
    * Megállapítja, hogy ütközött-e a kígyó darabja valamivel.
    * @param node {Piece}
@@ -45,7 +49,8 @@ interface IPiece {
    * Ha nem, akkor akkor tér vissza true -val, ha a this.x egyenlő a node.x -el 
    * és a this.y egyenlő a node.y -al.
    */
-  isCollidingWith(node: Piece | null): boolean;
+  
+   
 }
 
 /**
@@ -85,6 +90,12 @@ export default class Piece implements IPiece {
     this.garden = (document.getElementById('garden') as HTMLDivElement);
     // this.applyClass();
     this.garden.appendChild(this.el);
+  }
+  setType(type: string): void {
+    throw new Error('Method not implemented.');
+  }
+  applyClass(): void {
+    throw new Error('Method not implemented.');
   }
 
   bend(headDirection: string) {
