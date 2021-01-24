@@ -4,6 +4,30 @@ import Piece from "./Piece";
 import Utils from "./Utils";
 
 export default abstract class BaseGame implements IBaseGame {
+    head: Piece;
+
+    tail: Piece;
+
+    /** @default null */
+    food: Piece | null = null; // Ha gyors lenne, akkor Piece = null -al próbáld meg.
+
+    /** @default null */
+    goldenApple: Piece | null = null;
+
+    /** @default 0 */
+    length: number = 0;
+
+    /** @default 0 */
+    growth: number = 0;
+
+    /** @default 0 */
+    score: number = 0;
+
+    /** @default null */
+    currentLevel: Level | null = null;
+
+    garden: HTMLDivElement;
+
     protected moving: boolean = false;
 
     protected paused: boolean = false;
@@ -16,7 +40,7 @@ export default abstract class BaseGame implements IBaseGame {
 
     protected noClip: boolean = false;
 
-    /**
+    /** OK
      * @returns {number}
      * Egy random számot szorozz meg a this.level.length -el, 
      * majd kerekítsd lefelé, ez lesz az index.
@@ -24,7 +48,7 @@ export default abstract class BaseGame implements IBaseGame {
      */
     abstract getRandomLevel(): Level;
 
-    /**
+    /**  OK
      * @returns {boolean}
      * 1. hozz létre egy chance neű változót 5 értékkel
      * 2. hozz létre egy pick nevű változót, értéke random szám szorozva 100 -al
@@ -42,5 +66,5 @@ export default abstract class BaseGame implements IBaseGame {
      * metódust, hogy eltávolítsd őket az oldalról
      * 4. a this.gridVisible értékét állítsd false -ra
      */
-    abstract removeGrid (): void;
+    abstract removeGrid(): void;
 }
