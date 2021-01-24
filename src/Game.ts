@@ -266,6 +266,8 @@ export default class Game extends BaseGame {
     }
 
     this.score += won;
+    /*Ha 20 pontot elért a játékos nullázódjanak a pontjai. updateScore() kiegészítése egy feltételvizsgálattal */
+    this.score = this.score >= 20 ? 0 : this.score;
 
     return this.score;
   }
@@ -357,6 +359,23 @@ export default class Game extends BaseGame {
     return true;
   }
 
+  /* A kígyó ne tudjon jobbra fordulni. - Ez a rész a jobbra fordulás tiltása bármely kigyó fej poziciónál. */
+  /**
+   * Don"t let snake to turn right
+   */
+  // eslint-disable-next-line class-methods-use-this
+  notRight(key: number): boolean {
+    const lastDirection = Directions.peek();
+
+    if ((lastDirection === keys.UP && key === keys.RIGHT)
+      || (lastDirection === keys.DOWN && key === keys.LEFT)
+      || (lastDirection === keys.LEFT && key === keys.UP)
+      || (lastDirection === keys.RIGHT && key === keys.DOWN)) {
+      return false;
+    }
+    return true;
+  }
+
   setEvents(): void {
     document.addEventListener('keydown', (e: KeyboardEvent) => {
       switch (e.keyCode) {
@@ -416,7 +435,7 @@ export default class Game extends BaseGame {
             }
           }
 
-          if (e.keyCode in keys && this.notBackwards(e.keyCode)) {
+          if (e.keyCode in keys && this.notBackwards(e.keyCode) && this.notRight(e.keyCode)) {
             if (Directions.peek() !== e.keyCode) {
               Directions.set(e.keyCode);
             } else {
