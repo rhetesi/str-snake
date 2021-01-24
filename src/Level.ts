@@ -10,7 +10,7 @@ export default class Level {
 
   garden: HTMLDivElement;
 
-  constructor (private generatorFunction: (rows: number, cols: number) => LevelMap) {
+  constructor(private generatorFunction: (rows: number, cols: number) => LevelMap) {
     this.generatorFunction = generatorFunction;
     this.garden = (document.getElementById('garden') as HTMLDivElement);
   }
@@ -25,17 +25,17 @@ export default class Level {
    * @returns {coord} - egy [x, y] koordinátával tér vissza
    */
 
-   translate(x: number, y: number): coord {
-     return [Math.floor(x) * SIZE, Math.floor(y) * SIZE];
-   }
+  translate(x: number, y: number): coord {
+    return [Math.floor(x) * SIZE, Math.floor(y) * SIZE];
+  }
 
-  remove (): void {
+  remove(): void {
     this.pieces.forEach(piece => {
       piece.remove();
     });
   }
 
-  line (x0: number, y0: number, x1: number, y1: number): void {
+  line(x0: number, y0: number, x1: number, y1: number): void {
     const dx = Math.abs(x1 - x0);
     const dy = Math.abs(y1 - y0);
     const sx = (x0 < x1) ? 1 : -1;
@@ -68,7 +68,7 @@ export default class Level {
    * render method
    * @returns {void}
    */
-  render (): void {
+  render(): void {
     /** 
      * FELADAT!
      * @var {number} cols - this.garden.clientHeight és SIZE hányadosa, 
@@ -84,7 +84,7 @@ export default class Level {
      */
 
     let rows: number = Math.floor(this.garden.clientWidth / SIZE);
-    
+
     /** 
      * FELADAT!
      * @var {LevelMap} level - this.generatorFunction által visszaadott érték, 
